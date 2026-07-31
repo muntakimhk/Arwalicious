@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> for my lil rravioli <3 </title>
+  <title> for my lil ravioli <3 </title>
   
-  <!-- Canvas Confetti Library -->
+  
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <style>
-    /* TV Girl Moody Aesthetic Background & Base Styles */
+    
     body {
-      font-family: 'Courier New', Courier, monospace; /* Vintage indie feel */
+      font-family: 'Courier New', Courier, monospace;
       background: #110515;
       color: #ffb3c1;
       display: flex;
@@ -25,7 +25,7 @@
       position: relative;
     }
 
-    /* Floating Background Hearts */
+    
     .bg-heart {
       position: absolute;
       color: rgba(255, 42, 109, 0.25);
@@ -41,7 +41,7 @@
       100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
     }
 
-    /* Container Card */
+    
     .card {
       background: #1a0921;
       padding: 2rem;
@@ -97,7 +97,7 @@
 
     .hidden { display: none !important; }
 
-    /* Memory Game Grid */
+    
     .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -153,7 +153,7 @@
       filter: saturate(1.2) contrast(1.1);
     }
 
-    /* Vinyl Player Styling */
+    
     .vinyl-container {
       margin-top: 20px;
       background: #110515;
@@ -185,16 +185,23 @@
 <body>
 
 <!-- Floating Background Icons -->
-  <div class="bg-heart" style="top: 10%; left: 10%;">🌹</div>
+  <div class="bg-heart" style="top: 10%; left: 10%;">💙</div>
+  <div class="bg-heart" style="top: 5%; right: 16%;">💝</div>
+  <div class="bg-heart" style="top: 5%; left: 10%;">🥰</div>
+  <div class="bg-heart" style="top: 13%; right: 12%;">🌹</div>
   <div class="bg-heart" style="top: 20%; right: 15%; animation-delay: 1s;">✨</div>
+  <div class="bg-heart" style="top: 17%; left: 13%; animation-delay: 1s;">😍</div>
   <div class="bg-heart" style="bottom: 15%; left: 20%; animation-delay: 2s;">💖</div>
-  <div class="bg-heart" style="bottom: 10%; right: 10%; animation-delay: 3s;">🎵</div>
+  <div class="bg-heart" style="bottom: 13%; left: 10%; animation-delay: 2s;">😊</div>
+  <div class="bg-heart" style="bottom: 12%; right: 10%; animation-delay: 3s;">💜</div>
+  <div class="bg-heart" style="bottom: 10%; right: 10%; animation-delay: 3s;">💝</div>
+
 
   <div class="card">
     
     <!-- STAGE 1: LOCK SCREEN -->
     <div id="stage1">
-      <h1>hey lil beaan 🔐</h1>
+      <h1>hey my lil beaan 🔐</h1>
       <p>enter our lil passcode to open this:</p>
       <input type="text" id="passcode" placeholder="when did we first confess? (use /)" />
       <br>
@@ -202,24 +209,24 @@
       <p id="error1" style="color: #ff2a6d; display:none; margin-top: 10px;">Oops! Try again 💕</p>
     </div>
 
-    <!-- STAGE 2: MEMORY MATCHING GAME -->
+  
     <div id="stage2" class="hidden">
       <h1>Memory Game 🧩</h1>
-      <p>Match all 4 pairs of cute icons!</p>
+      <p>u gotta match all 4 pairs of cute icons baby!</p>
       <div class="grid" id="grid"></div>
     </div>
-<!-- STAGE 3: THE FINAL LETTER & REVEAL -->
+
     <div id="stage3" class="hidden">
       <h1>For My Arwa 💌</h1>
       
       <!-- POLAROID PHOTO SCRAPBOOK -->
       <div class="photo-scrapbook">
-        <div class="polaroid" style="transform: rotate(0deg);">
+        <div class="polaroid" style="transform: rotate(6deg);">
            
           <img src="photo.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo'">
           <p>kiss kiss</p>
         </div>
-        <div class="polaroid" style="transform: rotate(-3deg);">
+        <div class="polaroid" style="transform: rotate(-5deg);">
            
           <img src="photo1.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+1'">
           <p>us ☺️</p>
@@ -234,17 +241,17 @@
           <img src="photo3.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+3'">
           <p>smile smile 💫</p>
         </div>
-        <div class="polaroid" style="transform: rotate(4deg);">
+        <div class="polaroid" style="transform: rotate(7deg);">
            
           <img src="photo4.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+4'">
           <p> our hwans</p>
         </div>
-        <div class="polaroid" style="transform: rotate(-2deg);">
+        <div class="polaroid" style="transform: rotate(-5deg);">
            
           <img src="photo5.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+5'">
           <p>aw my heart i love you</p>
         </div>
-        <div class="polaroid" style="transform: rotate(2deg);">
+        <div class="polaroid" style="transform: rotate(5deg);">
            
           <img src="photo6.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+6'">
           <p>our almost first pics  who wudve knwn😍</p>
@@ -324,7 +331,7 @@
           <button onclick="playTrack('song9.mp3', 'The Marías - Sienna')">Track 9: Sienna 💋</button>
           <button onclick="playTrack('song10.mp3', 'Cigarettes After Sex - Sunsetz')">Track 10: Sunsetz 🌅</button>
           <button onclick="playTrack('song11.mp3', 'Cigarettes After Sex - Apocalypse')">Track 11: Apocalypse 🌎</button>
-          <button onclick="playTrack('song12.mp3', 'Cigarettes After Sex - Nothing's Gonna Hurt You Baby')">Track 12: Nothing's Gonna Hurt You Baby 🥰</button>
+          <button onclick="playTrack('song12.mp3', 'Cigarettes After Sex - Nothings Gonna Hurt You Baby')">Track 12: Nothing's Gonna Hurt You Baby 🥰</button>
         </div>
 
         <audio id="mySong">
@@ -340,8 +347,8 @@
     // STAGE 1: UNLOCK CODE
     function unlockStage1() {
       const input = document.getElementById('passcode').value.trim().toLowerCase();
-      // CHANGE 'park' TO YOUR ANSWER
-      if (input === 'park') { 
+      
+      if (input === '12/12/2025') { 
         triggerConfetti();
         document.getElementById('stage1').classList.add('hidden');
         document.getElementById('stage2').classList.remove('hidden');
