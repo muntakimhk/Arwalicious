@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For My Favorite Person ❤️</title>
+  <title> for my lil rravioli <3 </title>
   
-  <!-- Canvas Confetti Library for explosive hearts! -->
+  <!-- Canvas Confetti Library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <style>
-    /* Cute Background & Base Styles */
+    /* TV Girl Moody Aesthetic Background & Base Styles */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%);
-      color: #590d22;
+      font-family: 'Courier New', Courier, monospace; /* Vintage indie feel */
+      background: #110515;
+      color: #ffb3c1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -25,10 +25,10 @@
       position: relative;
     }
 
-    /* Floating Hearts Background Effect */
+    /* Floating Background Hearts */
     .bg-heart {
       position: absolute;
-      color: rgba(255, 77, 109, 0.2);
+      color: rgba(255, 42, 109, 0.25);
       font-size: 2rem;
       animation: float 6s infinite ease-in-out;
       user-select: none;
@@ -43,10 +43,11 @@
 
     /* Container Card */
     .card {
-      background: rgba(255, 255, 255, 0.95);
+      background: #1a0921;
       padding: 2rem;
       border-radius: 25px;
-      box-shadow: 0 15px 35px rgba(201, 24, 74, 0.15);
+      border: 2px solid #ff2a6d;
+      box-shadow: 0 0 25px rgba(255, 42, 109, 0.4);
       max-width: 450px;
       width: 90%;
       text-align: center;
@@ -55,30 +56,38 @@
       margin-bottom: 20px;
     }
 
-    h1 { color: #ff4d6d; font-size: 1.8rem; margin-top: 0; }
+    h1, h2, h3 { 
+      color: #ff2a6d; 
+      text-shadow: 2px 2px 8px rgba(255, 42, 109, 0.6);
+      margin-top: 0; 
+    }
     p { line-height: 1.6; }
 
     input {
       padding: 12px;
-      border: 2px solid #ffb3c1;
+      border: 2px solid #ff2a6d;
+      background: #110515;
+      color: #ffb3c1;
       border-radius: 12px;
       font-size: 1rem;
       text-align: center;
       width: 80%;
       outline: none;
+      font-family: inherit;
     }
 
     button {
-      margin-top: 15px;
+      margin-top: 10px;
       padding: 12px 24px;
-      background-color: #ff4d6d;
+      background-color: #ff2a6d;
       color: white;
       border: none;
       border-radius: 20px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: bold;
+      font-family: inherit;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
+      box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
       transition: transform 0.2s, background 0.2s;
     }
     button:hover {
@@ -96,7 +105,7 @@
       margin-top: 15px;
     }
     .grid-card {
-      background-color: #ffb3c1;
+      background-color: #ff2a6d;
       height: 70px;
       border-radius: 10px;
       display: flex;
@@ -108,47 +117,89 @@
       transition: transform 0.3s;
     }
     .grid-card.flipped {
-      background-color: #fff0f3;
+      background-color: #2b1035;
+      border: 1px solid #ff2a6d;
       transform: rotateY(180deg);
     }
 
-    /* Photo Styling */
-    .photo-frame {
+    /* Polaroid Scrapbook Gallery */
+    .photo-scrapbook {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .polaroid {
+      background: #fff;
+      padding: 10px 10px 15px 10px;
+      border-radius: 4px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      color: #110515;
+      font-weight: bold;
+      font-size: 0.85rem;
+      max-width: 170px;
+      transform: rotate(2deg);
+      transition: transform 0.3s ease;
+    }
+    .polaroid:hover {
+      transform: scale(1.08) rotate(0deg) !important;
+      z-index: 5;
+    }
+    .polaroid img {
       width: 100%;
-      max-height: 250px;
+      height: 130px;
       object-fit: cover;
-      border-radius: 15px;
-      margin: 15px 0;
-      border: 4px solid #ffb3c1;
+      filter: saturate(1.2) contrast(1.1);
     }
 
-    /* Music Player */
-    .audio-container {
-      margin-top: 15px;
-      background: #fff0f3;
-      padding: 10px;
+    /* Vinyl Player Styling */
+    .vinyl-container {
+      margin-top: 20px;
+      background: #110515;
+      padding: 15px;
       border-radius: 15px;
+      border: 1px solid #ff2a6d;
+    }
+    .vinyl {
+      width: 80px;
+      height: 80px;
+      background: #000;
+      border: 4px solid #ff2a6d;
+      border-radius: 50%;
+      margin: 10px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 0 15px rgba(255, 42, 109, 0.5);
+    }
+    .spinning {
+      animation: spin 3s linear infinite;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Floating Hearts Background -->
-  <div class="bg-heart" style="top: 10%; left: 10%;">❤️</div>
+<!-- Floating Background Icons -->
+  <div class="bg-heart" style="top: 10%; left: 10%;">🌹</div>
   <div class="bg-heart" style="top: 20%; right: 15%; animation-delay: 1s;">✨</div>
   <div class="bg-heart" style="bottom: 15%; left: 20%; animation-delay: 2s;">💖</div>
-  <div class="bg-heart" style="bottom: 10%; right: 10%; animation-delay: 3s;">🌸</div>
+  <div class="bg-heart" style="bottom: 10%; right: 10%; animation-delay: 3s;">🎵</div>
 
   <div class="card">
     
     <!-- STAGE 1: LOCK SCREEN -->
     <div id="stage1">
-      <h1>hey lil bean! 🔐</h1>
-      <p>Enter our lil special passcode to open your gift:</p>
+      <h1>hey lil beaan 🔐</h1>
+      <p>enter our lil passcode to open this:</p>
       <input type="text" id="passcode" placeholder="when did we first confess? (use /)" />
       <br>
       <button onclick="unlockStage1()">Unlock ✨</button>
-      <p id="error1" style="color: #c9184a; display:none;">Oops! Try again 💕</p>
+      <p id="error1" style="color: #ff2a6d; display:none; margin-top: 10px;">Oops! Try again 💕</p>
     </div>
 
     <!-- STAGE 2: MEMORY MATCHING GAME -->
@@ -157,32 +208,127 @@
       <p>Match all 4 pairs of cute icons!</p>
       <div class="grid" id="grid"></div>
     </div>
-
-    <!-- STAGE 3: THE FINAL LETTER & REASONS -->
+<!-- STAGE 3: THE FINAL LETTER & REVEAL -->
     <div id="stage3" class="hidden">
       <h1>For My Arwa 💌</h1>
       
-      <!-- REPLACE 'photo.jpg' WITH YOUR OWN IMAGE FILE NAME -->
-      <img src="photo.jpg" alt="Us Together" class="photo-frame" onerror="this.src='https://via.placeholder.com/400x250/ffb3c1/590d22?text=Your+Cutest+Photo+Here'">
-
+      <!-- POLAROID PHOTO SCRAPBOOK -->
+      <div class="photo-scrapbook">
+        <div class="polaroid" style="transform: rotate(0deg);">
+           
+          <img src="photo.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo'">
+          <p>kiss kiss</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(-3deg);">
+           
+          <img src="photo1.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+1'">
+          <p>us ☺️</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(3deg);">
+          <!-- Replace photo2.jpg with your photo filename -->
+          <img src="photo2.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+2'">
+          <p>Always with my cmh baby ❤️</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(-4deg);">
+           
+          <img src="photo3.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+3'">
+          <p>smile smile 💫</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(4deg);">
+           
+          <img src="photo4.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+4'">
+          <p> our hwans</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(-2deg);">
+           
+          <img src="photo5.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+5'">
+          <p>aw my heart i love you</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(2deg);">
+           
+          <img src="photo6.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+6'">
+          <p>our almost first pics  who wudve knwn😍</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(6deg);">
+           
+          <img src="photo7.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+7'">
+          <p>awww</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(-7deg);">
+           
+          <img src="photo8.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+8'">
+          <p>this is so pinterest my love</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(10deg);">
+           
+          <img src="photo9.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+9'">
+          <p>more kissy</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(-9deg);">
+           
+          <img src="photo10.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+10'">
+          <p>👁👁s</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(13deg);">
+           
+          <img src="photo11.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+11'">
+          <p>your hands are the prettiest my baby</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(-13deg);">
+           
+          <img src="photo12.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+12'">
+          <p>i love you arwa</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(-11deg);">
+           
+          <img src="photo13.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+13'">
+          <p>height diff👄</p>
+        </div>
+        <div class="polaroid" style="transform: rotate(16deg);">
+           
+          <img src="photo14.jpg" alt="Us" onerror="this.src='https://via.placeholder.com/150/ff2a6d/ffffff?text=Photo+14'">
+          <p>mmmmmmm i really love this baby</p>
+        </div>
+      </div>
+    
       <p style="text-align: left;">
         Hey ravs,<br><br>
-        i aam trynaa code and i thought why not make for forthe one who yk makes me look forward for something good. you have sort of pulled meout of that old sad depresso stae baby. you make me smile smile and blush blush. i think everything that has happened in my life has led me to you and i wudnt change a thing as long s it meant tht i get to be yours my snoozepie. my pudding you mean the world and i always want to be by your side. i wanna see you succeed and succeed with you. us together. i wanna love you forever i can. my ravs  i want you to kno and remember how much you mean to me. evry moment with you is my favorite memory! 🌹
+       Today is girlfriend's day mmmm and youre my beautiful, loving, lovely adowable tweety puddingly beany sweetpotato cottoncandy girlfriend and best friend. i am tryna code lol and i wanted to make something for the love of my life. i hope you like this lol. you mean so much to me arwa i really cannot emphasize it enough. i wont ever be able to express and explain to you how muchhhhhhh you mean to me my baby. you have pulled me out of that old sad depresso self-hate state lmao. you make me smile smile blush blush giggly giggly and kiss kiss. i think everything that has happened in my life(which  used to regret but not anymore lmao) has led me to you and i wudnt change a thing as long as it means that i get to be yours, my snoozepie. excuse my grammar lol and typos pls. my pudding you mean the world to me and i always want to be by your side. i wanna see you succeed and succeed with you. us together. i wanna love you forever and i will my ravs i kno. i want you to kno and remember how much you mean to me. every moment with you is my favourite memory. you are special kind caring thoughtful emphatetic beautiful and cute. your heart is full of love and kindness and youre so creative lmao. your music taste is peak and you smell like mine. i love you so much arwa. theres so much i want to tell you. i cant wait to see youuuuu 
+
+-your snoopsie
       </p>
 
       <!-- RANDOM REASONS BUTTON -->
       <hr style="border: 1px dashed #ffb3c1; margin: 20px 0;">
-      <h3> I Love You 💖</h3>
+      <h3> i love you 💖</h3>
       <p id="reasonText" style="font-style: italic; color: #c9184a;">Click the button below!</p>
-      <button onclick="showNextReason()">Give Me A Reason 🎲</button>
+      <button onclick="showNextReason()">why?🤔 🎲</button>
 
-      <!-- BACKGROUND MUSIC PLAYER -->
-      <div class="audio-container">
-        <p style="margin: 0 0 5px 0; font-size: 0.9rem;">🎵 Our Song:</p>
-        <!-- REPLACE 'song.mp3' WITH YOUR SONG FILE NAME -->
-        <audio id="mySong" controls style="width: 100%;">
-          <source src="song.mp3" type="audio/mpeg">
-          Your browser does not support audio.
+<!-- TV GIRL VINYL MIXTAPE PLAYER -->
+      <div class="vinyl-container">
+        <h3>✨ Our Mixtape</h3>
+        <div id="vinylRecord" class="vinyl">🎵</div>
+        <p id="nowPlayingText" style="font-size: 0.85rem; margin-top: 5px;">Select a track below:</p>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <!-- Rename these filenames to match your uploaded MP3 files -->
+          <button onclick="playTrack('song.mp3', 'The 1975 - About You')">Track 0: About You 💝</button>
+          <button onclick="playTrack('song1.mp3', 'TV Girl - Lovers Rock')">Track 1: Lovers Rock 🌹</button>
+          <button onclick="playTrack('song2.mp3', 'TV Girl - Loving Machine')">Track 2: Loving Machine ☺️</button>
+          <button onclick="playTrack('song3.mp3', 'The Ronettes - Be My Baby')">Track 3: be my baby 🤰🏻</button>
+          <button onclick="playTrack('song4.mp3', 'Robby deresz - falling for u')">Track 4: falling for u 🍂</button>
+          <button onclick="playTrack('song5.mp3', 'Hers - What Once Was')">Track 5: what once was 💕</button>
+          <button onclick="playTrack('song6.mp3', 'UMI - Remember Me')">Track 6: Remember Me 🤔</button>
+          <button onclick="playTrack('song7.mp3', 'Frank Ocean - Pink + White')">Track 7: Pink + White 🎀</button>
+          <button onclick="playTrack('song8.mp3', 'Widowspeak - True Blue')">Track 8: True Blue 🐋</button>
+          <button onclick="playTrack('song9.mp3', 'The Marías - Sienna')">Track 9: Sienna 💋</button>
+          <button onclick="playTrack('song10.mp3', 'Cigarettes After Sex - Sunsetz')">Track 10: Sunsetz 🌅</button>
+          <button onclick="playTrack('song11.mp3', 'Cigarettes After Sex - Apocalypse')">Track 11: Apocalypse 🌎</button>
+          <button onclick="playTrack('song12.mp3', 'Cigarettes After Sex - Nothing's Gonna Hurt You Baby')">Track 12: Nothing's Gonna Hurt You Baby 🥰</button>
+        </div>
+
+        <audio id="mySong">
+          <source id="audioSource" src="song1.mp3" type="audio/mpeg">
         </audio>
       </div>
 
@@ -191,14 +337,11 @@
   </div>
 
   <script>
-    // ------------------------------------
-    // STAGE 1: LOCK SCREEN CODE
-    // ------------------------------------
+    // STAGE 1: UNLOCK CODE
     function unlockStage1() {
       const input = document.getElementById('passcode').value.trim().toLowerCase();
-      
-      // CHANGE THIS TO YOUR ACTUAL PASSCODE (keep in lowercase)
-      if (input === '12/12/2026') { 
+      // CHANGE 'park' TO YOUR ANSWER
+      if (input === 'park') { 
         triggerConfetti();
         document.getElementById('stage1').classList.add('hidden');
         document.getElementById('stage2').classList.remove('hidden');
@@ -208,33 +351,27 @@
       }
     }
 
-    // Confetti Helper Function
     function triggerConfetti() {
       confetti({
         particleCount: 80,
         spread: 60,
         origin: { y: 0.6 },
-        colors: ['#ff4d6d', '#ffb3c1', '#ffffff']
+        colors: ['#ff2a6d', '#ffb3c1', '#ffffff']
       });
     }
 
-    // ------------------------------------
-    // STAGE 2: 4x4 MEMORY GAME CODE
-    // ------------------------------------
+    // STAGE 2: MEMORY GAME
     const icons = ['🌸', '🐱', '🍩', '👑', '🌸', '🐱', '🍩', '👑'];
     let flippedCards = [];
     let matchedPairs = 0;
 
     function initGame() {
       const grid = document.getElementById('grid');
-      // Shuffle icons
       icons.sort(() => 0.5 - Math.random());
-
       icons.forEach((icon, index) => {
         const card = document.createElement('div');
         card.classList.add('grid-card');
         card.dataset.icon = icon;
-        card.dataset.index = index;
         card.innerHTML = '❓';
         card.addEventListener('click', flipCard);
         grid.appendChild(card);
@@ -246,7 +383,6 @@
         this.classList.add('flipped');
         this.innerHTML = this.dataset.icon;
         flippedCards.push(this);
-
         if (flippedCards.length === 2) {
           setTimeout(checkMatch, 600);
         }
@@ -262,8 +398,8 @@
           setTimeout(() => {
             document.getElementById('stage2').classList.add('hidden');
             document.getElementById('stage3').classList.remove('hidden');
-            document.getElementById('mySong').play();
-            
+            // Auto-play first track on reveal
+            playTrack('song1.mp3', 'TV Girl - Lovers Rock');
           }, 1000);
         }
       } else {
@@ -279,16 +415,35 @@
     // STAGE 3: REASONS WHY I LOVE YOU
     // ------------------------------------
     const reasons = [
-      "yk when i get sad anxious nervous or anything bad i can deadass just look t your pic or just thiink about and my heart calms down melts my love.",
+      "yk when i get sad anxious nervous or anything bad i can deadass just look at your pic or just think about u and my heart calms down. i melt my love.",
       "your blush blush beautiful smile.",
-      "how insanely kind and thoughtful you are to everyone.",
+      "your eyes.",
+      "what we want is what we get, and i want you arwa.",
+      "youre the one for me and i wanna be the one for you. i feel soooo loved by you and i wanna do the same and ever more because you deserve the world nd all of the love that exists.",
       "how your eyes sparkle when you see me my love .",
-      "you are home, no amount of words cant describe or explain how much love i have foryou in me my baby."
+      "i really love you arwa so much, my best friend, my soulmate",
+      "you are home, no amount of words cant describe or explain how much love i have for you in me my baby."
     ];
-
-    function showNextReason() {
+  
+function showNextReason() {
       const randomIndex = Math.floor(Math.random() * reasons.length);
       document.getElementById('reasonText').innerText = `"${reasons[randomIndex]}"`;
+    }
+
+    function playTrack(file, songTitle) {
+      const audio = document.getElementById('mySong');
+      const source = document.getElementById('audioSource');
+      const vinyl = document.getElementById('vinylRecord');
+      const text = document.getElementById('nowPlayingText');
+
+      source.src = file;
+      audio.load();
+      audio.play().catch(() => {
+        console.log("Autoplay blocked until user clicks a track button.");
+      });
+
+      text.innerText = "▶ Now Playing: " + songTitle;
+      vinyl.classList.add('spinning');
     }
   </script>
 </body>
