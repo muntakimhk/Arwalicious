@@ -180,7 +180,7 @@
       <div class="audio-container">
         <p style="margin: 0 0 5px 0; font-size: 0.9rem;">🎵 Our Song:</p>
         <!-- REPLACE 'song.mp3' WITH YOUR SONG FILE NAME -->
-        <audio controls style="width: 100%;">
+        <audio id="mySong" controls style="width: 100%;">
           <source src="song.mp3" type="audio/mpeg">
           Your browser does not support audio.
         </audio>
@@ -262,6 +262,8 @@
           setTimeout(() => {
             document.getElementById('stage2').classList.add('hidden');
             document.getElementById('stage3').classList.remove('hidden');
+            document.getElementById('mySong').play();
+            
           }, 1000);
         }
       } else {
